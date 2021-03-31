@@ -1,20 +1,22 @@
-function getGrades(){
-    var marks=89;
 
-if(marks>=80){
-    console.log("A");
+const car = {
+    toyota: 'corolla' ,//object with  property
+    color: "navy blue"
 }
-else if(marks>=70){
-    console.log("B");
-}
-else if(marks>=60){
-    console.log("C");
-}
-else if(marks>=50){
-    console.log("D");
-}
-else if(marks<=49){
-    console.log("E");
-}
-}
-getGrades()
+
+Object.defineProperty(car, "getToyota", {
+    get : function () {
+        return this.toyota; //getting the toyota property from  object car
+    }
+});
+
+Object.defineProperty(car, "changeName", {
+    set : function (value) {
+        this.toyota= value; // setting the toyota property to a different value
+    }
+});
+
+console.log(car.toyota);
+car.toyota = "van"//output
+
+console.log(car.toyota); 
